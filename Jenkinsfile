@@ -33,7 +33,7 @@ stages{
                     }                     
                 }
             }
-        stage('Run Container'){
+        stage('Run App Container'){
                 steps{
                   sh 'docker run  -d -p 8081:8081 --name project4nodejs adeshadk/sl_project4'                  
                 }
