@@ -38,6 +38,11 @@ stages{
                   sh 'docker run  -d -p 8081:8081 --name project4nodejs adeshadk/sl_project4'                  
                 }
             }
+         stage('Test App'){
+                steps{
+                  sh 'npm test'                  
+                }
+            }
 
     }
 }
