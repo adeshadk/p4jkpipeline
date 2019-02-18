@@ -41,6 +41,7 @@ stages{
          stage('Test App'){
              agent {
                  docker { 
+                     image 'adeshadk/sl_project4'
                      label 'project4nodejs'
                  }
              }
