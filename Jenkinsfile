@@ -41,7 +41,7 @@ stages{
          stage('Test App'){
             
                 steps{
-                  sh 'docker exec -it project4nodejs /bin/bash -c "npm test"'                  
+                  sh 'docker exec project4nodejs /bin/bash -c "npm test"'                  
                 }
             }
 
