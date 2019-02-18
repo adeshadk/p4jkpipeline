@@ -9,6 +9,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
+#install PM2 for prod use
+RUN npm install pm2 -g
 # If you are building your code for production
 # RUN npm ci --only=production
 
