@@ -39,6 +39,11 @@ stages{
                 }
             }
          stage('Test App'){
+             agent {
+                 docker { 
+                     label 'project4nodejs'
+                 }
+             }
                 steps{
                   sh 'npm test'                  
                 }
