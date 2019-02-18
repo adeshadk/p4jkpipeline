@@ -5,7 +5,7 @@ stages{
     stage('Build'){
             steps{
                 echo 'Building'
-
+                sh 'pwd'
             }
 
 
