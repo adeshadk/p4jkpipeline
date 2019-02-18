@@ -1,10 +1,13 @@
-var http = require('http');
+var express = require('express')
+var app = express()
 
-var handleRequest = function(request, response) {
-  console.log('URL requested: ' + request.url);
-  response.writeHead(200);
-  response.end('This is simplilearn project 4 for Devops Practioner Course on Feb 17 at 9:13am');
-};
-var www = http.createServer(handleRequest);
-www.listen(8081);
+
+app.get('/', function (req, res) {
+  res.send('This is assesment project 4')
+})
+
+//App listening server on port 8081
+app.listen(8081, function () {
+  console.log('Listening at port 8081')
+})
 

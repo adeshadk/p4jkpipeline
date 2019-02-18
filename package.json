@@ -1,0 +1,28 @@
+{
+  "name": "p4jenkinspipeline",
+  "version": "1.0.0",
+  "description": "This is assesment project 4",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adeshadk/p4jkpipeline.git"
+  },
+  "author": "Adesh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adeshadk/p4jkpipeline/issues"
+  },
+  "homepage": "https://github.com/adeshadk/p4jkpipeline#readme",
+  "dependencies": {    
+    "express": "^4.16.4"    
+  },
+  "devDependencies": {
+    "request": "^2.88.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
