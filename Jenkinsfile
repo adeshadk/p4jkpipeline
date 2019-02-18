@@ -44,6 +44,12 @@ stages{
                   sh 'docker exec project4nodejs /bin/bash -c "npm test"'                  
                 }
             }
+        stage('Deliver App'){            
+                steps{
+                  sh 'docker exec project4nodejs /bin/bash -c "npm run build"'  
+                  sh 'docker exec project4nodejs /bin/bash -c "npm start &; sleep 1; echo $! > .pidfile"'                
+                }
+            }
 
     }
 }
