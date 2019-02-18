@@ -25,7 +25,19 @@ stages{
                     }                     
                 }
             }
-
+        stage('Pull Image'){
+                steps{
+                   withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                    sh 'docker pull adeshadk/sl_project4:latest'
+                    }                     
+                }
+            }
+        stage('Run Container'){
+                steps{
+                  sh 'docker run  -d -p 8081:8081 --name project4nodejs adeshadk/sl_project4'                  
+                }
+            }
 
     }
 }
