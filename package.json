@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/adeshadk/p4jkpipeline#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pm2": "^3.3.0"
   },
   "devDependencies": {
     "request": "^2.88.0",
