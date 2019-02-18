@@ -37,7 +37,6 @@ stages{
              agent {
                  docker { 
                      image 'adeshadk/sl_project4'
-                     label 'project4nodejs'
                      args ' -d -p 8081:8081 --name project4nodejs'
                  }
              }
