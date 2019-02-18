@@ -33,16 +33,12 @@ stages{
                     }                     
                 }
             }
-        stage('Run App Container'){
-                steps{
-                  sh 'docker run  -d -p 8081:8081 --name project4nodejs adeshadk/sl_project4'                  
-                }
-            }
-         stage('Test App'){
+        stage('Test App'){
              agent {
                  docker { 
                      image 'adeshadk/sl_project4'
                      label 'project4nodejs'
+                     args ' -d -p 8081:8081 --name project4nodejs'
                  }
              }
                 steps{
