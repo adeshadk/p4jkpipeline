@@ -37,11 +37,14 @@ stages{
         stage('Deliver App'){            
                 steps{
                   sh 'docker exec project4nodejs /bin/bash -c "pm2 start  server.js"' 
-                  input 'Finished browsing the home page? (Click "Proceed" to continue)'
-                  sh 'docker stop $(docker ps -q --filter "ancestor=adeshadk/sl_project4")'   
-                  sh 'docker rm $(docker ps -aq --filter "ancestor=adeshadk/sl_project4")'  
+                  input 'Finished browsing the home page? (Click "Proceed" to continue)'                  
                 }
             }
-
+    }
+    post { 
+            always { 
+                    sh 'docker stop $(docker ps -q --filter "ancestor=adeshadk/sl_project4") || true'   
+                    sh 'docker rm $(docker ps -aq --filter "ancestor=adeshadk/sl_project4") || true'  
+            }
     }
 }
